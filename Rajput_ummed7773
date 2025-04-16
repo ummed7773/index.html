@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Downloader</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      width: 100%;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      max-width: 600px;
+      width: 100%;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+    button {
+      background: #2980b9;
+      color: white;
+      padding: 15px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #3498db;
+    }
+    .features {
+      margin-top: 40px;
+      padding: 20px;
+      background: #ecf0f1;
+      border-radius: 10px;
+    }
+    .features h3 {
+      margin-top: 0;
+    }
+    .feature-list {
+      list-style: none;
+      padding-left: 0;
+    }
+    .feature-list li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Online Video Downloader</h1>
+    <p>Paste the video link below to download in your preferred format</p>
+  </header>
+  <div class="container">
+    <input type="text" id="videoURL" placeholder="Paste video URL here...">
+    <button onclick="downloadVideo()">Download</button>
+    <p id="statusMessage"></p>
+  </div>  <div class="features">
+    <h3>Key Features</h3>
+    <ul class="feature-list">
+      <li><strong>Multi-Platform Support:</strong> Download from Facebook, Instagram, TikTok, and more.</li>
+      <li><strong>Format Options:</strong> Choose MP3, MP4, 720p, 1080p, etc.</li>
+      <li><strong>Preview:</strong> View video details before download.</li>
+      <li><strong>Secure:</strong> No data stored, encrypted SSL connection.</li>
+    </ul>
+  </div>  <script>
+    function downloadVideo() {
+      const url = document.getElementById('videoURL').value;
+      if (!url) {
+        document.getElementById('statusMessage').textContent = 'Please paste a video URL.';
+        return;
+      }
+      document.getElementById('statusMessage').textContent = 'Processing...';
+
+      // Here you would normally make a request to your backend with youtube-dl or pytube
+      // Example pseudo-code:
+      // fetch('/api/download', { method: 'POST', body: JSON.stringify({ url }) })
+      //   .then(response => response.blob())
+      //   .then(blob => { /* trigger download */ });
+
+      setTimeout(() => {
+        document.getElementById('statusMessage').textContent = 'Video download ready (simulated).';
+      }, 2000);
+    }
+  </script></body>
+</html>dr
